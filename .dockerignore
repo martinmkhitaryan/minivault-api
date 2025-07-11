@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Logs
+logs/
+
+# Git
+.git/
+.gitignore
+
+# VSCode and workspace settings
+.vscode/
+*.code-workspace
+
+# Backup or old code
+backup/
+
+# Other
+*.log
+.DS_Store 

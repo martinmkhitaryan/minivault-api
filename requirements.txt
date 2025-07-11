@@ -1,0 +1,4 @@
+fastapi[standard-no-fastapi-cloud-cli]==0.116.0
+pydantic-settings==2.10.1
+orjson==3.10.18
+httpx==0.28.1
