@@ -29,13 +29,20 @@ A minimal FastAPI-based API for generating and streaming responses from a Langua
 
 ## Configuration
 
-The backend LLM service is controlled by the environment variable `MINIVAULT_LLM_SERVICE`:
-- `stubbed` (default): Uses a mock LLM with canned responses.
-- `ollama`: Connects to a local Ollama server (default: `http://localhost:11434`, model: `tinyllama`).
+The backend LLM service and its settings are controlled by environment variables, using the prefix `MINIVAULT_` and double underscore (`__`) as a nested delimiter. The main options are:
 
-Set the variable before running the server:
+- `MINIVAULT_LLM_SERVICE__TYPE`: Selects the LLM backend. Options:
+  - `stubbed` (default): Uses a mock LLM with canned responses.
+  - `ollama`: Connects to a local Ollama server.
+- `MINIVAULT_LLM_SERVICE__MODEL`: (Ollama only) The model to use. Default: `tinyllama`.
+- `MINIVAULT_LLM_SERVICE__BASE_URL`: (Ollama only) The base URL for the Ollama server. Default: `http://localhost:11434`.
+
+Set these variables before running the server. For example, to use Ollama with a custom model:
+
 ```bash
-export MINIVAULT_LLM_SERVICE=ollama
+export MINIVAULT_LLM_SERVICE__TYPE=ollama
+export MINIVAULT_LLM_SERVICE__MODEL=llama2
+export MINIVAULT_LLM_SERVICE__BASE_URL=http://localhost:11434
 ```
 
 ## Running the API
